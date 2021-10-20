@@ -6,6 +6,8 @@ def citireLista():
 
     return list
 
+
+
 def numerenegative(list):
     """
     Determina numerele negative nenule din lista
@@ -32,14 +34,10 @@ def celmaimicnrcuultimacifradata(list,n):
     :param n:numar integ
     :return:cel mai mic numar care are ultima cifra egala cu o cifra introdusa de la tastatura
     """
-    m=100000000000
+    list.sort()
     for i in list:
         if i%10==n:
-            nr=i
-            if m>nr:
-                m=nr
-    if m!=100000000000:
-        return m
+            return i
 
 def test_celmaimicnrcuultimacifradata():
     assert (celmaimicnrcuultimacifradata([1,6,34,68,40,48,20],8)==48)
@@ -147,6 +145,7 @@ def test_numerepoznumereneg():
     assert (numerepoznumereneg([-76,12,24,-13,144])==[-67,12,12,-31,12])
     assert (numerepoznumereneg([-12,-13,-14,-15])==[-21,-31,-41,-51])
     assert (numerepoznumereneg([12,14,16,18])==[2,2,2,2])
+
 
 
 def main():
